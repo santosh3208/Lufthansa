@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_ryZGIH84EeyP5M1psJO2qQ" targetNamespace="http://tns.tibco.com/bw/composite/LH.module" name="LH.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_2R-DYH84EeyP5M1psJO2qQ" name="hello" promote="ComponentProcess/hello">
+    <sca:interface.wsdl xmi:id="_2SGmQH84EeyP5M1psJO2qQ" interface="http://xmlns.example.com/20220127011638PLT#wsdl.interface(hello)" scaext:wsdlLocation="../Processes/lh/module/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_2SQXQH84EeyP5M1psJO2qQ" name="RestService" path="/hello/{name}" docBasePath="http://localhost:7777/LH.module" docResourcePath="hello" basePath="/" connector="lh.module.hello" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/lh.module.Process-hello.json">
+      <operation xmi:id="_2SVPwH84EeyP5M1psJO2qQ" operationName="get" nickname="get-hello" httpMethod="GET" notes="getHello" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_2W_GQH84EeyP5M1psJO2qQ">
+        <parameterMapping xmi:id="_2W_tUH84EeyP5M1psJO2qQ" parameterName="name" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_2STakH84EeyP5M1psJO2qQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_2SV20H84EeyP5M1psJO2qQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_sU9AoH84EeyP5M1psJO2qQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_sVKcAH84EeyP5M1psJO2qQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_sVOGYH84EeyP5M1psJO2qQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_sVRwwH84EeyP5M1psJO2qQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_sVX3YH84EeyP5M1psJO2qQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_sVdW8H84EeyP5M1psJO2qQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_sViPcH84EeyP5M1psJO2qQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_sFg2cH84EeyP5M1psJO2qQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_sFiEkH84EeyP5M1psJO2qQ" processName="lh.module.Process"/>
+    <sca:service xmi:id="_2R6ZAH84EeyP5M1psJO2qQ" name="hello">
+      <sca:interface.wsdl xmi:id="_2R7AEH84EeyP5M1psJO2qQ" interface="http://xmlns.example.com/20220127011638PLT#wsdl.interface(hello)" scaext:wsdlLocation="../Processes/lh/module/Process.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

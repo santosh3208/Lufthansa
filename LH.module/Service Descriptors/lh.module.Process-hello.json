@@ -1,0 +1,38 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "hello",
+    "description" : "hello service"
+  },
+  "host" : "localhost:8085",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/hello/{name}" : {
+      "get" : {
+        "summary" : "getHello",
+        "description" : "getHello",
+        "operationId" : "get-hello",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}
