@@ -17,7 +17,7 @@
     <project.type>Docker</project.type>
     <failIfNoTests>false</failIfNoTests>
     <docker.property.file>docker-dev.properties</docker.property.file>
-    <tibco.Home>/opt/tibco/bwce</tibco.Home>
+    <tibco.Home></tibco.Home>
   </properties>
   <build>
     <plugins>
@@ -42,7 +42,7 @@
         <configuration>
           <files>
             <file>${docker.property.file}</file>
-            <file>${docker.env.property.file}</file>
+            
           </files>
         </configuration>
       </plugin>
@@ -75,7 +75,7 @@
               </build>
               <run>
                 <namingStrategy>alias</namingStrategy>
-                <envPropertyFile>${docker.env.property.file}</envPropertyFile>
+                
               </run>
             </image>
           </images>
